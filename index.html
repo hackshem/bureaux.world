@@ -1,36 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <title>BureauX – Request a Quote</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tailwind CDN for quick prototype (replace with your own build) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Favicon as SVG, fallback as PNG -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg"/>
-  <link rel="icon" type="image/png" href="assets/logo.png"/>
-  <style>
-    .modal-open { overflow: hidden; }
-  </style>
-</head>
-<body class="bg-gray-50 font-sans antialiased">
+  <!-- ==== Meta ==== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BureauX – All‑in‑One Service Platform</title>
+  <meta name="description"
+        content="Discover, buy, and manage professional services in one secure, AI‑powered platform.">
+  <link rel="icon" href="/favicon.ico">
 
-  <!-- ==== NAV ==== -->
-  <nav class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="/" class="flex items-center gap-2 text-xl font-bold text-indigo-600">
-        <img src="assets/logo.png" alt="BureauX Logo" class="h-8 w-auto"/>
-        BureauX
+  <!-- ==== Open Graph ==== -->
+  <meta property="og:title" content="BureauX – All‑in‑One Service Platform">
+  <meta property="og:description"
+        content="Discover, buy, and manage professional services in one secure, AI‑powered platform.">
+  <meta property="og:image" content="https://your‑domain.com/og-image.png">
+  <meta property="og:url" content="https://your‑domain.com/">
+  <meta property="og:type" content="website">
+
+  <!-- ==== Twitter Card ==== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BureauX – All‑in‑One Service Platform">
+  <meta name="twitter:description"
+        content="Discover, buy, and manage professional services in one secure, AI‑powered platform.">
+  <meta name="twitter:image" content="https://your‑domain.com/og-image.png">
+
+  <!-- ==== Tailwind CSS ==== -->
+  <link href="/styles/tailwind.css" rel="stylesheet">
+
+  <!-- ==== Alpine.js (for interactivity) ==== -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="/logo.svg" alt="BureauX logo" class="h-8 w-auto">
+        <span class="font-semibold text-xl text-gray-800">BureauX</span>
       </a>
-      <div>
-        <a href="#services" class="mx-2 text-gray-700 hover:text-indigo-600">Services</a>
-        <a href="#about" class="mx-2 text-gray-700 hover:text-indigo-600">About</a>
-        <a href="/login" class="ml-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Log In</a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#features" class="text-gray-600 hover:text-gray-900 transition">Features</a>
+        <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition">Pricing</a>
+        <a href="#about" class="text-gray-600 hover:text-gray-900 transition">About</a>
+        <a href="/login"
+           class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition">
+          Sign In
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <div class="md:hidden" x-data="{ open: false }">
+        <button @click="open = !open"
+                class="text-gray-600 hover:text-gray-900 focus:outline-none">
+          <svg class="h-6 w-6" x-show="!open" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg class="h-6 w-6" x-show="open" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile menu -->
+        <div x-show="open"
+             @click.away="open = false"
+             class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
+          <a href="#features"
+             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Features</a>
+          <a href="#pricing"
+             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pricing</a>
+          <a href="#about"
+             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About</a>
+          <a href="/login"
+             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col lg:flex-row items-center">
+      <div class="lg:w-1/2">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+          All‑in‑One Platform for Professional Services
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 max-w-lg">
+          Find, purchase, and manage consulting, SaaS tools, and marketplace listings
+          from a single, secure dashboard powered by AI‑driven recommendations.
+        </p>
+
+        <div class="mt-8 flex space-x-4">
+          <a href="#pricing"
+             class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+            Get Started
+          </a>
+          <a href="#demo"
+             class="inline-flex items-center justify-center px-6 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50">
+            Watch Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero illustration (replace with your own) -->
+      <div class="mt-12 lg:mt-0 lg:ml-12 lg:w-1/2 flex justify-center">
+        <img src="/hero-bg.jpg"
+             alt="Dashboard illustration"
+             class="rounded-lg shadow-xl max-w-full w-96 object-cover">
       </div>
     </div>
-  </nav>
 
-  <!-- (rest of your HTML unchanged) -->
-  <!-- ... -->
+    <!-- Decorative gradient -->
+    <div class="absolute inset-0 pointer-events-none">
+      <svg class="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 1440 600"
+           preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F0F5FF"/>
+            <stop offset="100%" stop-color="#E5E7EB"/>
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="600" fill="url(#grad)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section id="features" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">
+        Why BureauX?
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Feature Card -->
+        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
+               stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m2 0a2 2 0 100-4 2 2 0 000 4zm-8 0a2 2 0 100-4 2 2 0 000 4z"></path>
+          </svg>
+          <h3 class="mt-4 text-xl font-semibold text-gray-900">Unified Catalog</h3>
+          <p class="mt-2 text-gray-600">
+            Browse consulting, SaaS, and marketplace services in a single searchable
+            catalog.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
+               stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3"></path>
+          </svg>
+          <h3 class="mt-4 text-xl font-semibold text-gray-900">AI Recommendations</h3>
+          <p class="mt-2 text-gray-600">
+            Smart suggestions based on usage patterns, industry, and budget.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
+               stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 7h18M3 12h18M3 17h18"></path>
+          </svg>
+          <h3 class="mt-4 text-xl font-semibold text-gray-900">Transparent Billing</h3>
+          <p class="mt-2 text-gray-600">
+            One‑click invoicing, usage‑based pricing, and built‑in tax handling.
+          </p>
+        </div>
+
+        <!-- Add more feature cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section id="pricing" class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-8">
+        Simple, Predictable Pricing
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Free Tier -->
+        <div class="border border-gray-200 rounded-lg p-8 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Free</h3>
+          <p class="text-4xl font-bold text-primary-600 mb-4">$0<span class="text-base font-medium text-gray-500">/mo</span></p>
+          <ul class="text-left mb-6 space-y-2 text-gray-600">
+            <li>✔️ Up to 3 services</li>
+            <li>✔️ Basic analytics</li>
+            <li>✔️ Community support</li>
+          </ul>
+          <a href="/signup?plan=free"
+             class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">
+            Start Free
+          </a>
+        </div>
+
+        <!-- Pro Tier -->
+        <div class="border-2 border-primary-600 rounded-lg p-8 shadow-md">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Pro</h3>
+          <p class="text-4xl font-bold text-primary-600 mb-4">$49<span class="text-base font-medium text-gray-500">/mo</span></p>
+          <ul class="text-left mb-6 space-y-2 text-gray-600">
+            <li>✔️ Unlimited services</li>
+            <li>✔️ AI recommendations</li>
+            <li>✔️ Priority support</li>
+            <li>✔️ Custom branding</li>
+          </ul>
+          <a href="/signup?plan=pro"
+             class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">
+            Go Pro
+          </a>
+        </div>
+
+        <!-- Enterprise Tier -->
+        <div class="border border-gray-200 rounded-lg p-8 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Enterprise</h3>
+          <p class="text-4xl font-bold text-primary-600 mb-4">Custom</p>
+          <ul class="text-left mb-6 space-y-2 text-gray-600">
+            <li>✔️ Dedicated account manager</li>
+            <li>✔️ SLA‑backed uptime</li>
+            <li>✔️ Private instance (VPC)</li>
+            <li>✔️ Advanced compliance (HIPAA, SOC 2)</li>
+          </ul>
+          <a href="/contact"
+             class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section id="testimonials" class="bg-gray-50 py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-12">
+        What Our Customers Say
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Testimonial Card -->
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <p class="text-gray-700 italic">“BureauX saved us 30 % on SaaS spend and gave us a single place to manage all contracts.”</p>
+          <div class="mt-4 flex items-center justify-center">
+            <img src="https://i.pravatar.cc/48?img=1"
+                 alt="Avatar"
+                 class="h-10 w-10 rounded-full mr-3">
+            <div class="text-left">
+              <p class="font-semibold text-gray-900">Alex Rivera</p>
+              <p class="text-sm text-gray-500">CTO, FinTechCo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL‑TO‑ACTION (CTA) ==================== -->
+  <section id="demo" class="bg-primary-600 py-16 text-center text-white">
+    <h2 class="text-3xl font-extrabold mb-4">
+      Ready to See BureauX in Action?
+    </h2>
+    <p class="mb-8 max-w-xl mx-auto">
+      Book a 15‑minute live demo and discover how the platform can accelerate your
+      service procurement.
+    </p>
+    <a href="/demo"
+       class="inline-block px-8 py-3 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition">
+      Schedule a Demo
+    </a>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="/logo.svg" alt="BureauX logo" class="h-10 mb-4">
+        <p class="text-sm">
+          Empowering businesses with a unified service ecosystem.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3">Product</h4>
+        <ul class="space-y-2">
+          <li><a href="#features" class="hover:underline">Features</a></li>
+          <li><a href="#pricing" class="hover:underline">Pricing</a></li>
+          <li><a href="/docs" class="hover:underline">Docs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="/careers" class="hover:underline">Careers</a></li>
+          <li><a href="/blog" class="hover:underline">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="/privacy" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="/terms" class="hover:underline">Terms of Service</a></li>
+          <li><a href="/cookies" class="hover:underline">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm">
+      © <span id="year"></span> BureauX. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ==== Small script for dynamic year ==== -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+  </script>
 </body>
 </html>
