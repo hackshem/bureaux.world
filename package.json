@@ -1,0 +1,26 @@
+{
+  "name": "bureaux.world",
+  "version": "1.0.0",
+  "description": "www.bureaux.world - website",
+  "main": "templatemo-electric-scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackshem/bureaux.world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackshem/bureaux.world/issues"
+  },
+  "homepage": "https://github.com/hackshem/bureaux.world#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  }
+}

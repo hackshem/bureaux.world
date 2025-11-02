@@ -1,257 +1,362 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BureauX – All‑in‑One Service Platform</title>
-  <meta name="description" content="Discover, buy, and manage professional services in one secure, AI‑powered platform.">
-  <link rel="icon" href="favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
-
-  <!-- Tailwind CDN with your config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              50: '#f5faff',
-              100: '#e0f2ff',
-              200: '#b8e4ff',
-              300: '#80ccff',
-              400: '#4ab2ff',
-              500: '#1a99ff',
-              600: '#0078e6',
-              700: '#0064c2',
-              800: '#004c99',
-              900: '#003366',
-            },
-          },
-        },
-      },
-    }
-  </script>
-  <!-- Alpine.js for interactivity -->
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Description" content="Discover, buy, and manage professional services in one secure, AI‑powered platform.">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
-  <!-- NAVBAR -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center space-x-2">
-        <img src="logo.svg" alt="BureauX logo" class="h-8 w-auto">
-        <span class="font-semibold text-xl text-gray-800">BureauX</span>
-      </a>
-      <div class="hidden md:flex space-x-6">
-        <a href="#features" class="text-gray-600 hover:text-gray-900 transition">Features</a>
-        <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition">Pricing</a>
-        <a href="#about" class="text-gray-600 hover:text-gray-900 transition">About</a>
-        <a href="/login"
-           class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition">
-          Sign In
-        </a>
-      </div>
-      <div class="md:hidden" x-data="{ open: false }">
-        <button @click="open = !open"
-                class="text-gray-600 hover:text-gray-900 focus:outline-none">
-          <svg class="h-6 w-6" x-show="!open" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-          <svg class="h-6 w-6" x-show="open" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-        <div x-show="open"
-             @click.away="open = false"
-             class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
-          <a href="#features"
-             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Features</a>
-          <a href="#pricing"
-             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pricing</a>
-          <a href="#about"
-             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About</a>
-          <a href="/login"
-             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- HERO -->
-  <section class="relative bg-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col lg:flex-row items-center">
-      <div class="lg:w-1/2">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">All‑in‑One Platform for Professional Services</h1>
-        <p class="mt-4 text-lg text-gray-600 max-w-lg">Find, purchase, and manage consulting, SaaS tools, and marketplace listings from a single, secure dashboard powered by AI‑driven recommendations.</p>
-        <div class="mt-8 flex space-x-4">
-          <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">Get Started</a>
-          <a href="#demo" class="inline-flex items-center justify-center px-6 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50">Watch Demo</a>
-        </div>
-      </div>
-      <div class="mt-12 lg:mt-0 lg:ml-12 lg:w-1/2 flex justify-center">
-        <img src="hero-bg.jpg" alt="Dashboard illustration" class="rounded-lg shadow-xl max-w-full w-96 object-cover">
-      </div>
-    </div>
-    <div class="absolute inset-0 pointer-events-none">
-      <svg class="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 1440 600"
-           preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#F0F5FF"/>
-            <stop offset="100%" stop-color="#E5E7EB"/>
-          </linearGradient>
-        </defs>
-        <rect width="1440" height="600" fill="url(#grad)"/>
-      </svg>
-    </div>
-  </section>
-  <!-- FEATURES -->
-  <section id="features" class="bg-gray-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">Why BureauX?</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
-          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
-               stroke="currentColor" viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m2 0a2 2 0 100-4 2 2 0 000 4zm-8 0a2 2 0 100-4 2 2 0 000 4z"></path>
-          </svg>
-          <h3 class="mt-4 text-xl font-semibold text-gray-900">Unified Catalog</h3>
-          <p class="mt-2 text-gray-600">Browse consulting, SaaS, and marketplace services in a single searchable catalog.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
-          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
-               stroke="currentColor" viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3"></path>
-          </svg>
-          <h3 class="mt-4 text-xl font-semibold text-gray-900">AI Recommendations</h3>
-          <p class="mt-2 text-gray-600">Smart suggestions based on usage patterns, industry, and budget.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow-sm p-6 text-center">
-          <svg class="mx-auto h-12 w-12 text-primary-600" fill="none"
-               stroke="currentColor" viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 7h18M3 12h18M3 17h18"></path>
-          </svg>
-          <h3 class="mt-4 text-xl font-semibold text-gray-900">Transparent Billing</h3>
-          <p class="mt-2 text-gray-600">One‑click invoicing, usage‑based pricing, and built‑in tax handling.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- PRICING -->
-  <section id="pricing" class="bg-white py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Simple, Predictable Pricing</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="border border-gray-200 rounded-lg p-8 shadow-sm">
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Free</h3>
-          <p class="text-4xl font-bold text-primary-600 mb-4">$0<span class="text-base font-medium text-gray-500">/mo</span></p>
-          <ul class="text-left mb-6 space-y-2 text-gray-600">
-            <li>✔️ Up to 3 services</li>
-            <li>✔️ Basic analytics</li>
-            <li>✔️ Community support</li>
-          </ul>
-          <a href="/signup?plan=free" class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">Start Free</a>
-        </div>
-        <div class="border-2 border-primary-600 rounded-lg p-8 shadow-md">
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Pro</h3>
-          <p class="text-4xl font-bold text-primary-600 mb-4">$49<span class="text-base font-medium text-gray-500">/mo</span></p>
-          <ul class="text-left mb-6 space-y-2 text-gray-600">
-            <li>✔️ Unlimited services</li>
-            <li>✔️ AI recommendations</li>
-            <li>✔️ Priority support</li>
-            <li>✔️ Custom branding</li>
-          </ul>
-          <a href="/signup?plan=pro" class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">Go Pro</a>
-        </div>
-        <div class="border border-gray-200 rounded-lg p-8 shadow-sm">
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Enterprise</h3>
-          <p class="text-4xl font-bold text-primary-600 mb-4">Custom</p>
-          <ul class="text-left mb-6 space-y-2 text-gray-600">
-            <li>✔️ Dedicated account manager</li>
-            <li>✔️ SLA‑backed uptime</li>
-            <li>✔️ Private instance (VPC)</li>
-            <li>✔️ Advanced compliance (HIPAA, SOC 2)</li>
-          </ul>
-          <a href="/contact" class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700">Contact Sales</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="bg-gray-50 py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-12">What Our Customers Say</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white rounded-lg p-6 shadow-sm">
-          <p class="text-gray-700 italic">“BureauX saved us 30 % on SaaS spend and gave us a single place to manage all contracts.”</p>
-          <div class="mt-4 flex items-center justify-center">
-            <img src="https://i.pravatar.cc/48?img=1" alt="Avatar" class="h-10 w-10 rounded-full mr-3">
-            <div class="text-left">
-              <p class="font-semibold text-gray-900">Alex Rivera</p>
-              <p class="text-sm text-gray-500">CTO, FinTechCo</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- DEMO CTA -->
-  <section id="demo" class="bg-primary-600 py-16 text-center text-white">
-    <h2 class="text-3xl font-extrabold mb-4">Ready to See BureauX in Action?</h2>
-    <p class="mb-8 max-w-xl mx-auto">Book a 15‑minute live demo and discover how the platform can accelerate your service procurement.</p>
-    <a href="/demo" class="inline-block px-8 py-3 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition">Schedule a Demo</a>
-  </section>
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <img src="logo.svg" alt="BureauX logo" class="h-10 mb-4">
-        <p class="text-sm">Empowering businesses with a unified service ecosystem.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white mb-3">Product</h4>
-        <ul class="space-y-2">
-          <li><a href="#features" class="hover:underline">Features</a></li>
-          <li><a href="#pricing" class="hover:underline">Pricing</a></li>
-          <li><a href="/docs" class="hover:underline">Docs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white mb-3">Company</h4>
-        <ul class="space-y-2">
-          <li><a href="#about" class="hover:underline">About</a></li>
-          <li><a href="/careers" class="hover:underline">Careers</a></li>
-          <li><a href="/blog" class="hover:underline">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-white mb-3">Legal</h4>
-        <ul class="space-y-2">
-          <li><a href="/privacy" class="hover:underline">Privacy Policy</a></li>
-          <li><a href="/terms" class="hover:underline">Terms of Service</a></li>
-          <li><a href="/cookies" class="hover:underline">Cookie Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm">
-      © <span id="year"></span> BureauX. All rights reserved.
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en" class="scroll-smooth"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Meta ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;BureauX – All‑in‑One Service Platform&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="description"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content="Discover, buy, and manage professional services in one secure, AI‑powered platform."&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="icon" href="/favicon.ico"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Open Graph ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta property="og:title" content="BureauX – All‑in‑One Service Platform"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta property="og:description"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content="Discover, buy, and manage professional services in one secure, AI‑powered platform."&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta property="og:image" content="https://your‑domain.com/og-image.png"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta property="og:url" content="https://your‑domain.com/"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta property="og:type" content="website"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Twitter Card ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:card" content="summary_large_image"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:title" content="BureauX – All‑in‑One Service Platform"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:description"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content="Discover, buy, and manage professional services in one secure, AI‑powered platform."&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:image" content="https://your‑domain.com/og-image.png"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Tailwind CSS ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="/styles/tailwind.css" rel="stylesheet"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Alpine.js (for interactivity) ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;body class="bg-gray-50 text-gray-900 antialiased"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== NAVBAR ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header class="bg-white shadow-sm sticky top-0 z-50"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a href="/" class="flex items-center space-x-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="/logo.svg" alt="BureauX logo" class="h-8 w-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="font-semibold text-xl text-gray-800"&gt;BureauX&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Desktop links --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="hidden md:flex space-x-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a href="#features" class="text-gray-600 hover:text-gray-900 transition"&gt;Features&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a href="#pricing" class="text-gray-600 hover:text-gray-900 transition"&gt;Pricing&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a href="#about" class="text-gray-600 hover:text-gray-900 transition"&gt;About&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a href="/login"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Sign In</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Mobile hamburger --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="md:hidden" x-data="{ open: false }"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button @click="open = !open"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>class="text-gray-600 hover:text-gray-900 focus:outline-none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="h-6 w-6" x-show="!open" fill="none" stroke="currentColor"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>stroke-width="2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>d="M4 6h16M4 12h16M4 18h16"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="h-6 w-6" x-show="open" fill="none" stroke="currentColor"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>stroke-width="2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Mobile menu --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div x-show="open"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>@click.away="open = false"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="#features"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"&gt;Features&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="#pricing"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"&gt;Pricing&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="#about"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"&gt;About&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="/login"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"&gt;Sign In&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== HERO SECTION ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="relative bg-white overflow-hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col lg:flex-row items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="lg:w-1/2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>All‑in‑One Platform for Professional Services</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="mt-4 text-lg text-gray-600 max-w-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Find, purchase, and manage consulting, SaaS tools, and marketplace listings</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>from a single, secure dashboard powered by AI‑driven recommendations.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="mt-8 flex space-x-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="#pricing"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Get Started</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="#demo"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="inline-flex items-center justify-center px-6 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Watch Demo</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Hero illustration (replace with your own) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="mt-12 lg:mt-0 lg:ml-12 lg:w-1/2 flex justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="/hero-bg.jpg"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>alt="Dashboard illustration"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="rounded-lg shadow-xl max-w-full w-96 object-cover"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Decorative gradient --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="absolute inset-0 pointer-events-none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;svg class="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 1440 600"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>preserveAspectRatio="none"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;defs&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;stop offset="0%" stop-color="#F0F5FF"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;stop offset="100%" stop-color="#E5E7EB"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/linearGradient&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/defs&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;rect width="1440" height="600" fill="url(#grad)"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== FEATURES ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="features" class="bg-gray-50 py-16"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Why BureauX?</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Feature Card --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-lg shadow-sm p-6 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="mx-auto h-12 w-12 text-primary-600" fill="none"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>stroke="currentColor" viewBox="0 0 24 24"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>xmlns="http://www.w3.org/2000/svg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>stroke-width="2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>d="M9 12h6m2 0a2 2 0 100-4 2 2 0 000 4zm-8 0a2 2 0 100-4 2 2 0 000 4z"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="mt-4 text-xl font-semibold text-gray-900"&gt;Unified Catalog&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="mt-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Browse consulting, SaaS, and marketplace services in a single searchable</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>catalog.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-lg shadow-sm p-6 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="mx-auto h-12 w-12 text-primary-600" fill="none"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>stroke="currentColor" viewBox="0 0 24 24"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>xmlns="http://www.w3.org/2000/svg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>stroke-width="2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>d="M12 8v4l3 3"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="mt-4 text-xl font-semibold text-gray-900"&gt;AI Recommendations&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="mt-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Smart suggestions based on usage patterns, industry, and budget.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-lg shadow-sm p-6 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="mx-auto h-12 w-12 text-primary-600" fill="none"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>stroke="currentColor" viewBox="0 0 24 24"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">               </span>xmlns="http://www.w3.org/2000/svg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>stroke-width="2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>d="M3 7h18M3 12h18M3 17h18"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="mt-4 text-xl font-semibold text-gray-900"&gt;Transparent Billing&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="mt-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>One‑click invoicing, usage‑based pricing, and built‑in tax handling.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Add more feature cards as needed --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== PRICING ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="pricing" class="bg-white py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2 class="text-3xl font-extrabold text-gray-900 mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Simple, Predictable Pricing</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Free Tier --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="border border-gray-200 rounded-lg p-8 shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="text-xl font-semibold text-gray-900 mb-4"&gt;Free&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-4xl font-bold text-primary-600 mb-4"&gt;$0&lt;span class="text-base font-medium text-gray-500"&gt;/mo&lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="text-left mb-6 space-y-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Up to 3 services&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Basic analytics&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Community support&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="/signup?plan=free"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Start Free</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Pro Tier --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="border-2 border-primary-600 rounded-lg p-8 shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="text-xl font-semibold text-gray-900 mb-4"&gt;Pro&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-4xl font-bold text-primary-600 mb-4"&gt;$49&lt;span class="text-base font-medium text-gray-500"&gt;/mo&lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="text-left mb-6 space-y-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Unlimited services&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ AI recommendations&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Priority support&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Custom branding&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="/signup?plan=pro"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Go Pro</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Enterprise Tier --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="border border-gray-200 rounded-lg p-8 shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 class="text-xl font-semibold text-gray-900 mb-4"&gt;Enterprise&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-4xl font-bold text-primary-600 mb-4"&gt;Custom&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ul class="text-left mb-6 space-y-2 text-gray-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Dedicated account manager&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ SLA‑backed uptime&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Private instance (VPC)&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;✔️ Advanced compliance (HIPAA, SOC 2)&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;a href="/contact"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>class="block w-full py-2 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Contact Sales</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== TESTIMONIALS ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="testimonials" class="bg-gray-50 py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h2 class="text-3xl font-extrabold text-gray-900 mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>What Our Customers Say</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Testimonial Card --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-lg p-6 shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-gray-700 italic"&gt;“BureauX saved us 30 % on SaaS spend and gave us a single place to manage all contracts.”&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="mt-4 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;img src="https://i.pravatar.cc/48?img=1"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>alt="Avatar"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>class="h-10 w-10 rounded-full mr-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="text-left"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="font-semibold text-gray-900"&gt;Alex Rivera&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-sm text-gray-500"&gt;CTO, FinTechCo&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Add more cards as needed --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== CALL‑TO‑ACTION (CTA) ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="demo" class="bg-primary-600 py-16 text-center text-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2 class="text-3xl font-extrabold mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Ready to See BureauX in Action?</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="mb-8 max-w-xl mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Book a 15‑minute live demo and discover how the platform can accelerate your</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>service procurement.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="/demo"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>class="inline-block px-8 py-3 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Schedule a Demo</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==================== FOOTER ==================== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;footer class="bg-gray-900 text-gray-300 py-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="/logo.svg" alt="BureauX logo" class="h-10 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="text-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Empowering businesses with a unified service ecosystem.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h4 class="font-semibold text-white mb-3"&gt;Product&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="space-y-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#features" class="hover:underline"&gt;Features&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#pricing" class="hover:underline"&gt;Pricing&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/docs" class="hover:underline"&gt;Docs&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h4 class="font-semibold text-white mb-3"&gt;Company&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="space-y-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#about" class="hover:underline"&gt;About&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/careers" class="hover:underline"&gt;Careers&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/blog" class="hover:underline"&gt;Blog&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h4 class="font-semibold text-white mb-3"&gt;Legal&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="space-y-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/privacy" class="hover:underline"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/terms" class="hover:underline"&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/cookies" class="hover:underline"&gt;Cookie Policy&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>© &lt;span id="year"&gt;&lt;/span&gt; BureauX. All rights reserved.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="templatemo-electric-xtra.css" /&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link rel="stylesheet" href="templatemo-electric-xtra-tailwind.css" /&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ==== Small script for dynamic year ==== --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('year').textContent = new Date().getFullYear()</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
